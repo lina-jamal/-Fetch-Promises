@@ -205,6 +205,13 @@
 // for (let i = 0; i < 10; i++) {
 //   console.log(i);
 // }
-// fetch("https://pokeapi.co/api/v2/pokemon/pikachu").then((response) => {
-//   console.log(response);
-// });
+fetch(
+  "http://api.giphy.com/v1/gifs/search?q=" +
+    "cat" +
+    "&limit=10" +
+    "&api_key=dc6zaTOxFJmzC"
+)
+  .then((response) => {
+    return response.json();
+  })
+  .then((res) => console.log(res.data[0].images.fixed_height.url));
